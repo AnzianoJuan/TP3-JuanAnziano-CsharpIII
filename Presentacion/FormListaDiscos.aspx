@@ -6,7 +6,7 @@
     <!-- Búsqueda rápida y botones superiores -->
     <div class="row mb-3">
         <div class="col-md-3">
-            <asp:TextBox ID="txtFiltro" CssClass="form-control" runat="server" placeholder="Buscar por nombre, marca o categoría..." />
+            <asp:TextBox ID="txtFiltro" CssClass="form-control" runat="server" placeholder="Buscar por nombre, marca o categoría..." AutoPostBack="true" OnTextChanged="txtFiltro_TextChanged" />
         </div>
         <div class="col-md-2">
             <asp:Button ID="btnBuscarRapido" runat="server" Text="Buscar" CssClass="btn btn-primary w-100" OnClick="btnBuscarRapido_Click" />
@@ -14,11 +14,30 @@
         <div class="col-md-2">
             <asp:Button ID="btnMostrarFormulario" runat="server" Text="Agregar nuevo artículo" CssClass="btn btn-success w-100" OnClick="btnMostrarFormulario_Click" />
         </div>
+        <div class="col-md-2">
+            <asp:Button ID="btnFiltroAvanzado" runat="server" Text="Filtro Avanzado" CssClass="btn btn-outline-secondary w-100" OnClientClick="mostrarFiltroAvanzado(); return false;" />
+        </div>
+    </div>
+
+    <!-- Panel de filtro avanzado -->
+    <div id="panelFiltroAvanzado" class="mb-4" style="display:none;">
+        <div class="row">
+            <div class="col-md-3">
+                <label>Marca</label>
+                <asp:DropDownList ID="ddlMarcaFiltro" runat="server" CssClass="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label>Categoría</label>
+                <asp:DropDownList ID="ddlCategoriaFiltro" runat="server" CssClass="form-control" />
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+        <asp:Button ID="btnBuscarAvanzado" runat="server" Text="Buscar" CssClass="btn btn-primary mt-3" OnClick="btnBuscarAvanzado_Click" />
     </div>
 
     <!-- Grilla -->
-    <asp:GridView ID="dgvArticulos" runat="server" AutoGenerateColumns="False" CssClass="table table-striped"
-        DataKeyNames="Id" OnRowCommand="dgvArticulos_RowCommand">
+    <asp:GridView ID="dgvArticulos" runat="server" AutoGenerateColumns="False" CssClass="table table-striped" DataKeyNames="Id" OnRowCommand="dgvArticulos_RowCommand">
         <Columns>
             <asp:BoundField DataField="Codigo" HeaderText="Código" />
             <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
@@ -87,5 +106,12 @@
         <asp:HiddenField ID="hfIdArticulo" runat="server" />
         <asp:HiddenField ID="hfModoVista" runat="server" />
     </asp:Panel>
+
+    <script type="text/javascript">
+        function mostrarFiltroAvanzado() {
+            var panel = document.getElementById("panelFiltroAvanzado");
+            panel.style.display = panel.style.display === "none" ? "block" : "none";
+        }
+    </script>
 
 </asp:Content>

@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="FormDetalle.aspx" />
     <Content Include="FormListaDiscos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -78,6 +79,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetalle.aspx.cs">
+      <DependentUpon>FormDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormDetalle.aspx.designer.cs">
+      <DependentUpon>FormDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormListaDiscos.aspx.cs">
       <DependentUpon>FormListaDiscos.aspx</DependentUpon>

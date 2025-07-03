@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -234,6 +235,58 @@ namespace Negocio
                 throw ex;
             }
 
+        }
+
+        public Articulo BuscarPorId(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.SetConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, ImagenUrl, Precio, " +
+                                  "M.Id IdMarca, M.Descripcion Marca, C.Id IdCategoria, C.Descripcion Categoria " +
+                                  "FROM ARTICULOS A " +
+                                  "JOIN MARCAS M ON A.IdMarca = M.Id " +
+                                  "JOIN CATEGORIAS C ON A.IdCategoria = C.Id " +
+                                  "WHERE A.Id = @id");
+                datos.SetearParametro("@id", id);
+                datos.EjecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    Articulo art = new Articulo
+                    {
+                        Id = (int)datos.Lector["Id"],
+                        Codigo = datos.Lector["Codigo"].ToString(),
+                        Nombre = datos.Lector["Nombre"].ToString(),
+                        Descripcion = datos.Lector["Descripcion"].ToString(),
+                        ImagenUrl = datos.Lector["ImagenUrl"].ToString(),
+                        Precio = (decimal)datos.Lector["Precio"],
+                        Marca = new Marca
+                        {
+                            Id = (int)datos.Lector["IdMarca"],
+                            Descripcion = datos.Lector["Marca"].ToString()
+                        },
+                        Categoria = new Categoria
+                        {
+                            Id = (int)datos.Lector["IdCategoria"],
+                            Descripcion = datos.Lector["Categoria"].ToString()
+                        }
+                    };
+
+                    return art;
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
         }
     }
 }

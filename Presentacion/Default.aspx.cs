@@ -21,5 +21,19 @@ namespace Presentacion
                 repRepetidor.DataBind();
             }
         }
+
+        protected void repRepetidor_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "Ver")
+            {
+                string id = e.CommandArgument.ToString();
+                Response.Redirect("FormDetalle.aspx?id=" + id);
+            }
+        }
+
+        protected void txtBuscarRapido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,6 +42,42 @@ namespace Presentacion
         protected global::System.Web.UI.WebControls.Button btnMostrarFormulario;
 
         /// <summary>
+        /// Control btnFiltroAvanzado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFiltroAvanzado;
+
+        /// <summary>
+        /// Control ddlMarcaFiltro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMarcaFiltro;
+
+        /// <summary>
+        /// Control ddlCategoriaFiltro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCategoriaFiltro;
+
+        /// <summary>
+        /// Control btnBuscarAvanzado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuscarAvanzado;
+
+        /// <summary>
         /// Control dgvArticulos.
         /// </summary>
         /// <remarks>
