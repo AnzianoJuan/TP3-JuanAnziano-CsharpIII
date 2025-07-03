@@ -12,7 +12,7 @@
             <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" required></asp:TextBox>
         </div>
         <div class="text-center">
-            <asp:Button runat="server" Text="Iniciar"  CssClass="btn btn-primary" ID="ButtonIniciar" OnClick=""/>
+            <asp:Button runat="server" Text="Iniciar"  CssClass="btn btn-primary" ID="ButtonIniciar" OnClick="ButtonIniciar_Click"/>
         </div>
         <div>
 
