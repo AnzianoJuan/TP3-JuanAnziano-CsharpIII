@@ -19,32 +19,33 @@ namespace Presentacion
 
         protected void ButtonIniciar_Click(object sender, EventArgs e)
         {
-            Usuario trainee = new Usuario();
-            UsuarioData data = new UsuarioData();
-
             try
             {
+                Usuario trainee = new Usuario();
                 trainee.Email = txtEmail.Text;
                 trainee.Pass = txtPassword.Text;
+
+                UsuarioData data = new UsuarioData();
+
                 if (data.Login(trainee))
                 {
+                    // Guardar el usuario completo en la sesión
                     Session.Add("trainee", trainee);
+                    // Guardar adicionalmente si es admin o no (opcional)
+                    Session["esAdmin"] = trainee.Admin;
+
                     Response.Redirect("Default.aspx", false);
                 }
                 else
                 {
-                    Session.Add("error", "User o pass incorrecto");
+                    Session.Add("error", "Email o contraseña incorrectos");
                     Response.Redirect("Error.aspx", false);
                 }
-
-
             }
             catch (Exception ex)
             {
-
                 Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx", false);
-
             }
         }
     }

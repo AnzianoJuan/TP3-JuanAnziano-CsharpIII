@@ -13,6 +13,10 @@ namespace Presentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["trainee"] == null)
+                Response.Redirect("FormLogin.aspx");
+
+
             if (!IsPostBack)
             {
                 ArticuloData data = new ArticuloData();

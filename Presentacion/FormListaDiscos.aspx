@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FormListaDiscos.aspx.cs" Inherits="Presentacion.FormListaDiscos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
- <h2 class="mb-4">Gestión de Artículos</h2>
+    <h2 class="mb-4">Gestión de Artículos</h2>
 
     <!-- Búsqueda rápida y botones superiores -->
     <div class="row mb-3">
@@ -20,7 +21,7 @@
     </div>
 
     <!-- Panel de filtro avanzado -->
-    <div id="panelFiltroAvanzado" class="mb-4" style="display:none;">
+    <div id="panelFiltroAvanzado" class="mb-4" style="display: none;">
         <div class="row">
             <div class="col-md-3">
                 <label>Marca</label>
@@ -37,7 +38,13 @@
     </div>
 
     <!-- Grilla -->
-    <asp:GridView ID="dgvArticulos" runat="server" AutoGenerateColumns="False" CssClass="table table-striped" DataKeyNames="Id" OnRowCommand="dgvArticulos_RowCommand">
+    <asp:GridView ID="dgvArticulos" runat="server"
+        AutoGenerateColumns="False"
+        CssClass="table table-striped"
+        DataKeyNames="Id"
+        OnRowCommand="dgvArticulos_RowCommand"
+        OnRowDataBound="dgvArticulos_RowDataBound">
+
         <Columns>
             <asp:BoundField DataField="Codigo" HeaderText="Código" />
             <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
@@ -48,11 +55,12 @@
             <asp:TemplateField HeaderText="Acciones">
                 <ItemTemplate>
                     <asp:Button runat="server" Text="Ver" CommandName="Ver" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-outline-info btn-sm me-1" />
-                    <asp:Button runat="server" Text="Editar" CommandName="Editar" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-outline-warning btn-sm me-1" />
-                    <asp:Button runat="server" Text="Eliminar" CommandName="Eliminar" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-outline-danger btn-sm" OnClientClick="return confirm('¿Eliminar artículo definitivamente?');" />
+                    <asp:Button ID="btnEditar" runat="server" Text="Editar" CommandName="Editar" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-outline-warning btn-sm me-1" />
+                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CommandName="Eliminar" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-outline-danger btn-sm" OnClientClick="return confirm('¿Eliminar artículo definitivamente?');" />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+
     </asp:GridView>
 
     <!-- Formulario de alta/edición/visualización -->

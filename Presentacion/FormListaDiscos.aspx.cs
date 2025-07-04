@@ -14,11 +14,25 @@ namespace Presentacion
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            // Validación de sesión (si no está logueado, redirige)
+            if (Session["trainee"] == null)
+            {
+                Response.Redirect("FormLogin.aspx", false);
+                return;
+            }
+
+            // Solo ejecutar esto la primera vez (no en cada postback)
             if (!IsPostBack)
             {
                 cargarGrilla();
                 cargarFiltros();
+
+                // Muestro u oculto el botón de alta según el rol
+                bool esAdmin = ((Dominio.Usuario)Session["trainee"]).Admin;
+                btnMostrarFormulario.Visible = esAdmin;
             }
+
         }
 
         private void cargarGrilla()
@@ -226,6 +240,36 @@ namespace Presentacion
         protected void txtFiltro_TextChanged(object sender, EventArgs e)
         {
             btnBuscarRapido_Click(sender, e);
+        }
+
+        protected void dgvArticulos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                if (Session["trainee"] != null)
+                {
+                    Usuario usuarioActual = (Usuario)Session["trainee"];
+
+                    Button btnEditar = (Button)e.Row.FindControl("btnEditar");
+                    Button btnEliminar = (Button)e.Row.FindControl("btnEliminar");
+
+                    // Si NO es admin, los oculto
+                    if (!usuarioActual.Admin)
+                    {
+                        btnEditar.Visible = false;
+                        btnEliminar.Visible = false;
+                    }
+                }
+                else
+                {
+                    // Si no hay sesión, por seguridad ocultamos los botones
+                    Button btnEditar = (Button)e.Row.FindControl("btnEditar");
+                    Button btnEliminar = (Button)e.Row.FindControl("btnEliminar");
+                    btnEditar.Visible = false;
+                    btnEliminar.Visible = false;
+                }
+            }
+
         }
     }
 }
