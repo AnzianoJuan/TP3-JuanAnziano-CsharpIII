@@ -1,0 +1,6 @@
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Dominio\bin\Release\Dominio.dll
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Dominio\bin\Release\Dominio.pdb
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Dominio\obj\Release\Dominio.csproj.AssemblyReference.cache
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Dominio\obj\Release\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Dominio\obj\Release\Dominio.dll
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Dominio\obj\Release\Dominio.pdb

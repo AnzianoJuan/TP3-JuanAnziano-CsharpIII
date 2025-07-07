@@ -1,0 +1,9 @@
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Negocio\bin\Release\Negocio.dll
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Negocio\bin\Release\Negocio.pdb
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Negocio\bin\Release\Dominio.dll
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Negocio\bin\Release\Dominio.pdb
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Negocio\obj\Release\Negocio.csproj.AssemblyReference.cache
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Negocio\obj\Release\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Negocio\obj\Release\Negocio.csproj.Up2Date
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Negocio\obj\Release\Negocio.dll
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U8\AnzianoJuan_C#III\Negocio\obj\Release\Negocio.pdb

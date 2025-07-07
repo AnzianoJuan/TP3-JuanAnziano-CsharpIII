@@ -72,6 +72,7 @@
     <Content Include="FormDetalle.aspx" />
     <Content Include="FormListaDiscos.aspx" />
     <Content Include="FormLogin.aspx" />
+    <Content Include="TestDB.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +118,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TestDB.aspx.cs">
+      <DependentUpon>TestDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestDB.aspx.designer.cs">
+      <DependentUpon>TestDB.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

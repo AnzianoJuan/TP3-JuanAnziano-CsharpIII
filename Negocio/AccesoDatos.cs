@@ -5,6 +5,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
+
 
 namespace Negocio
 {
@@ -13,16 +15,13 @@ namespace Negocio
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataReader lector;
-
+        private static string conex = ConfigurationManager.ConnectionStrings["cadenaConexion"].ToString();
         public SqlDataReader Lector { get { return lector; } }
         public SqlCommand Comando { get { return comando; } }
 
-        // Cambiá este string con tu cadena de conexión si hace falta
-        private string cadenaConexion = "server=.\\SQLEXPRESS; database=CATALOGO_WEB_DB; integrated security=true";
-
         public AccesoDatos()
         {
-            conexion = new SqlConnection(cadenaConexion);
+            conexion = new SqlConnection(conex);
             comando = new SqlCommand();
         }
 

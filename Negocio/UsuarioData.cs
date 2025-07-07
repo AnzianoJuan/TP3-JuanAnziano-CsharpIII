@@ -15,7 +15,7 @@ namespace Negocio
 
             try
             {
-                accesoDatos.SetConsulta("SELECT id, admin, email, pass FROM CATALOGO_WEB_DB.dbo.USERS WHERE email = @email AND pass = @pass");
+                accesoDatos.SetConsulta("SELECT id, admin, email, pass FROM USERS WHERE email = @email AND pass = @pass");
                 accesoDatos.SetearParametro("@email", trainee.Email);
                 accesoDatos.SetearParametro("@pass", trainee.Pass);
                 accesoDatos.EjecutarLectura();
